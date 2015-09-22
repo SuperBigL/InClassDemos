@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 
-namespace eRestaurantSystem.Entities
+namespace eRestaurantSystem.DAL.Entities
 {
     
     public class SpecialEvent
