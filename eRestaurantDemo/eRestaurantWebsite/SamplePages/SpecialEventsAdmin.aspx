@@ -6,7 +6,7 @@
         <tr>
             <td align="right">Select an Event:</td>
             <td>
-                <asp:DropDownList ID="SpecialEventList" runat="server" Width="200px">
+                <asp:DropDownList ID="SpecialEventList" runat="server" Width="200px" DataSourceID="ODSSpecialEvents" DataTextField="Description" DataValueField="EventCode">
                 </asp:DropDownList>
                 <asp:LinkButton ID="FetchReservations" runat="server">Fetch Reservations</asp:LinkButton>
             </td>
@@ -29,7 +29,7 @@
             <td>&nbsp;</td>
         </tr>
     </table>
-    <asp:ObjectDataSource ID="ODSSpecialEvents" runat="server"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ODSSpecialEvents" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="SpecialEvent_List" TypeName="eRestaurantSystem.BLL.AdminController"></asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ODSReservations" runat="server"></asp:ObjectDataSource>
 </asp:Content>
 
