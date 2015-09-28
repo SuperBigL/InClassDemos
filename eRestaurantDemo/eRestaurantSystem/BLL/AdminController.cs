@@ -21,7 +21,10 @@ namespace eRestaurantSystem.BLL
                 // in order to do that, we will use the DBSet in eRestaurantContext
                 // call SpecialEvents (done by Mapping)
 
-                return context.SpecialEvents.OrderBy(x => x.Description).ToList();
+                var results = from item in context.SpecialEvents
+                              orderby item.Description
+                              select item;
+                return results.ToList();
 
                 //method syntax
 
