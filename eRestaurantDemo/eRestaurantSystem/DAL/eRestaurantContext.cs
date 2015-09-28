@@ -7,7 +7,7 @@ using System.Data.Entity;
 using eRestaurantSystem.DAL.Entities;
 
 
-namespace eRestaurantSystemContext
+namespace eRestaurantSystem.DAL
 {
     //This class should be restricted to access by ONLY
     //BLL methods.

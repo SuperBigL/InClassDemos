@@ -13,7 +13,7 @@ namespace eRestaurantSystem.BLL
     public class AdminController
     {
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<SpecialEvent> SpecialEvent_List()
+        public List<SpecialEvent> SpecialEventsList()
         {
             using (var context = new eRestaurantContext())
             {
@@ -21,10 +21,38 @@ namespace eRestaurantSystem.BLL
                 // in order to do that, we will use the DBSet in eRestaurantContext
                 // call SpecialEvents (done by Mapping)
 
-                //method syntax
                 return context.SpecialEvents.OrderBy(x => x.Description).ToList();
 
+                //method syntax
+
+                
+
+               
+
+                //query syntax
+                //var results = from item in context.Reservations
+                              //orderby item.Description
+                              //select item;
+
+                //return results.ToList();
+
             }
+        }
+         [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public List<Reservation> ReservationsbyCode(string EventCode)
+        {
+            using (var context = new eRestaurantContext())
+            {
+                var results = from item in context.Reservation
+                              where item.Event.Equals(EventCode)
+                              orderby item.CustomerName, item.ReservationDate
+                              select item;
+                              return results.ToList();
+
+
+            }
+
+
         }
     }
 }
