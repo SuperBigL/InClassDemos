@@ -29,7 +29,7 @@ namespace eRestaurantSystem.DAL
         //Setip the DbSet Mappings
         //One DBSet for each entity I create.
         public DbSet<SpecialEvent> SpecialEvents { get; set; }
-        public DbSet<Reservation> Reservation { get; set; }
+        public DbSet<Reservations> Reservations { get; set; }
         public DbSet<Table> Tables { get; set; }
 
         //When overriding OnModelCreating(), it is important to remember
@@ -45,7 +45,7 @@ namespace eRestaurantSystem.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Reservation>().HasMany(r => r.Tables)
+            modelBuilder.Entity<Reservations>().HasMany(r => r.Tables)
                 .WithMany(x => x.Reservations)
                 .Map(mapping =>
                 {

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using eRestaurantSystem.DAL.Entities;
 using eRestaurantSystem.DAL;
 using System.ComponentModel; //Use for ODS access
+using eRestaurantSystem.BLL;
+using eRestaurantSystem.DAL.DTOs;
+using eRestaurantSystem.DAL.POCOs;
 
 namespace eRestaurantSystem.BLL
 {
@@ -30,32 +33,58 @@ namespace eRestaurantSystem.BLL
 
                 
 
-               
-
-                //query syntax
-                //var results = from item in context.Reservations
-                              //orderby item.Description
-                              //select item;
-
-                //return results.ToList();
+            
 
             }
         }
          [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<Reservation> ReservationsbyCode(string EventCode)
+        public List<Reservations> ReservationsbyCode(string EventCode)
         {
             using (var context = new eRestaurantContext())
             {
-                var results = from item in context.Reservation
+                var results = from item in context.Reservations
                               where item.Event.Equals(EventCode)
                               orderby item.CustomerName, item.ReservationDate
                               select item;
-                              return results.ToList();
+                return results.ToList();
 
 
             }
 
 
         }
+
+        [DataObjectMethod(DataObjectMethodType.Select,false)]
+        public List<ReservationByDate> GetReservationsByDate(string reservationdate)
+         {
+            using (var context = new eRestaurantContext())
+            {
+                //remember Linq does not like using DateTime casting
+                int theYear = (DateTime.Parse(reservationdate)).Year;
+                int theMonth = (DateTime.Parse(reservationdate)).Month;
+                int theDay = (DateTime.Parse(reservationdate)).Day;
+
+                var results = from item in context.SpecialEvents
+                              orderby item.Description
+                              select new ReservationByDate()//DTO
+                              {
+                                  Description = item.Description,
+                                  Reservation = from row in item.Reservations //collection of navigated rows of collection
+                                                 where row.ReservationDate.Year == theYear 
+                                                   && row.ReservationDate.Month == theMonth 
+                                                   && row.ReservationDate.Day == theDay
+                                                   select new ReservationDetail() //POCO
+                                                   {
+                                                       CustomerName = row.CustomerName,
+                                                       ReservationDate = row.ReservationDate,
+                                                       NumberInParty = row.NumberInParty,
+                                                       ContactPhone = row.ContactPhone,
+                                                       ReservationStatus = row.ReservationStatus
+                                                   }
+                              };
+                return results.ToList();
+            }
+
+         }
     }
 }

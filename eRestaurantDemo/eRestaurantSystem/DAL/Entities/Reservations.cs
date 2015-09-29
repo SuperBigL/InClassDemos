@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace eRestaurantSystem.DAL.Entities
 {
-    public class Reservation
+    public class Reservations
     {
         [Key]
         public int ReservationID { get; set; }

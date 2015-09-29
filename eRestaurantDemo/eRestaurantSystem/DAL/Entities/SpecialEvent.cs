@@ -22,7 +22,7 @@ namespace eRestaurantSystem.DAL.Entities
         public bool Active { get; set; }
 
         //Navigation virtual property (s)
-        public virtual ICollection<Reservation> Reversations { get; set; }
+        public virtual ICollection<Reservations> Reservations { get; set; }
 
         //all classes can have their own constructor
         //constructors can contain initialization values.
