@@ -27,6 +27,7 @@ namespace eRestaurantSystem.DAL.Entities
         //Thus we will place a ICollection properties in
         //this entity refering to the Reservation table
         public virtual ICollection<Reservations> Reservations { get; set; }
+        public virtual ICollection<Bill> Bills { get; set; }
 
         public Table()
         {
