@@ -1,32 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "eRestaurantWebsite", "http://localhost:52028", "{AFE91FC8-A1BE-43B6-88D7-B3322715A789}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eRestaurantSystem", "eRestaurantSystem\eRestaurantSystem.csproj", "{C96216F4-8BB6-47AC-A016-C057F6EE0534}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WSWebsite", "http://localhost:52876", "{562BD369-E6CB-4CB5-A673-467112E038ED}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		ProjectReferences = "{c96216f4-8bb6-47ac-a016-c057f6ee0534}|eRestaurantSystem.dll;"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_52028"
-		Debug.AspNetCompiler.PhysicalPath = "eRestaurantWebsite\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52028\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52876"
+		Debug.AspNetCompiler.PhysicalPath = "..\WorkScheduleSolution\WSWebsite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52876\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_52028"
-		Release.AspNetCompiler.PhysicalPath = "eRestaurantWebsite\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52028\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52876"
+		Release.AspNetCompiler.PhysicalPath = "..\WorkScheduleSolution\WSWebsite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52876\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "eRestaurantWebsite\"
+		SlnRelativePath = "..\WorkScheduleSolution\WSWebsite\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eRestaurantSystem", "eRestaurantSystem\eRestaurantSystem.csproj", "{C96216F4-8BB6-47AC-A016-C057F6EE0534}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,14 +33,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AFE91FC8-A1BE-43B6-88D7-B3322715A789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AFE91FC8-A1BE-43B6-88D7-B3322715A789}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AFE91FC8-A1BE-43B6-88D7-B3322715A789}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{AFE91FC8-A1BE-43B6-88D7-B3322715A789}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{C96216F4-8BB6-47AC-A016-C057F6EE0534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C96216F4-8BB6-47AC-A016-C057F6EE0534}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C96216F4-8BB6-47AC-A016-C057F6EE0534}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C96216F4-8BB6-47AC-A016-C057F6EE0534}.Release|Any CPU.Build.0 = Release|Any CPU
+		{562BD369-E6CB-4CB5-A673-467112E038ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{562BD369-E6CB-4CB5-A673-467112E038ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{562BD369-E6CB-4CB5-A673-467112E038ED}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{562BD369-E6CB-4CB5-A673-467112E038ED}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
