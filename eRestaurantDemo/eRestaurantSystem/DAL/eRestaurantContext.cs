@@ -31,6 +31,7 @@ namespace eRestaurantSystem.DAL
         public DbSet<SpecialEvent> SpecialEvents { get; set; }
         public DbSet<Reservations> Reservations { get; set; }
         public DbSet<Table> Tables { get; set; }
+        public DbSet<MenuCategory> MenuCategories { get; set; }
 
         //When overriding OnModelCreating(), it is important to remember
         //to call the base method's implementation before you exit the method.
