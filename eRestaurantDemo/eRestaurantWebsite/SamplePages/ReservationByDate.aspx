@@ -39,12 +39,6 @@
            
         </tr>
     </table>
-
-    <asp:ObjectDataSource ID="ODSReservations" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetReservationsByDate" TypeName="eRestaurantSystem.BLL.AdminController">
-        <SelectParameters>
-            <asp:Parameter Name="reservationdate" Type="String" />
-        </SelectParameters>
-    </asp:ObjectDataSource>
     
 
 
