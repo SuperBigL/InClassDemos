@@ -26,6 +26,9 @@ namespace eRestaurantSystem.DAL.Entities
         public string FullName { get { return FirstName + " " + LastName; } }
 
         // Navigation Properties
+       
         public virtual ICollection<Bill> Bills { get; set; }
+       
+
     }
 }

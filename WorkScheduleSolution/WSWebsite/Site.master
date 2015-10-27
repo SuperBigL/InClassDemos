@@ -54,8 +54,13 @@
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                         <li><a runat="server" href="~/SamplePages/ReservationByDate.aspx">Reservation By Date</a></li>
+                        <li><a runat="server" href="~/CommandPages/WaiterAdmin.aspx">Waiter CRUD</a></li>
                         <li><a runat="server" href="~/CommandPages/SpeecialEventsAdmin.aspx">ListViewCRUD</a></li>
                     </ul>
+
+
+
+
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">

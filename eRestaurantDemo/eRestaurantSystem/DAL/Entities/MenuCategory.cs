@@ -15,6 +15,14 @@ namespace eRestaurantSystem.DAL.Entities
         [StringLength(35, MinimumLength = 5, ErrorMessage = "Descriptions must be from 5 to 35 characters in length")]
         public string Description { get; set; }
 
-        public virtual ICollection<Item> MenuItems { get; set; }
+
+        
+        
+        
+       
+       
+        public virtual ICollection<Item> Items { get; set; }
+       
+        
     }
 }

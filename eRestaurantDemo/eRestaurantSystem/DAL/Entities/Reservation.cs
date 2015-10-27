@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace eRestaurantSystem.DAL.Entities
 {
-    public class Reservations
+    public class Reservation
     {
         [Key]
         public int ReservationID { get; set; }
@@ -35,8 +35,8 @@ namespace eRestaurantSystem.DAL.Entities
         //but we will handle in via navigation mapping.
         //Thus we will place a ICollection properties in
         //this entity refering to the Tables table
-        public virtual ICollection<Table> Tables { get; set; }
+       
         public virtual ICollection<Bill> Bills { get; set; }
-
+       
     }
 }

@@ -1,7 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SpeecialEventsAdmin.aspx.cs" Inherits="CommandPages_SpeecialEventsAdmin" MasterPageFile="~/Site.master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SpecialEventsAdmin.aspx.cs" Inherits="CommandPages_SpeecialEventsAdmin" MasterPageFile="~/Site.master" %>
+
+<%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
+
+
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Special Events CRUD using Listview</h1>
+   <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
     <asp:ListView ID="SpecialEventsDisplay" runat="server" DataSourceID="ObjectDataSource1" InsertItemPosition="FirstItem" DataKeyNames="EventCode">
         <AlternatingItemTemplate>
             <tr style="background-color: #FFFFFF;color: #284775;">

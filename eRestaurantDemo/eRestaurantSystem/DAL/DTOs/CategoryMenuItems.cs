@@ -10,8 +10,9 @@ namespace eRestaurantSystem.DAL.DTOs
 {
     public class CategoryMenuItems
     {
-        public string Description { get; set; }
+        public string CategoryDescription { get; set; }
         public IEnumerable MenuItems { get; set; }
+
 
     }
 }

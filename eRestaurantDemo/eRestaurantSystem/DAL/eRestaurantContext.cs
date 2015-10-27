@@ -28,14 +28,16 @@ namespace eRestaurantSystem.DAL
 
         //Setip the DbSet Mappings
         //One DBSet for each entity I create.
-        public DbSet<SpecialEvent> SpecialEvents { get; set; }
-        public DbSet<Reservations> Reservations { get; set; }
-        public DbSet<Table> Tables { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
         public DbSet<MenuCategory> MenuCategories { get; set; }
-
+        public DbSet<Table> Tables { get; set; }
+        public DbSet<Bill> Bills { get; set; }
+        public DbSet<BillItem> BillItems { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Waiter> Waiters { get; set; }
+        public DbSet<SpecialEvent> SpecialEvents { get; set; }
         //When overriding OnModelCreating(), it is important to remember
         //to call the base method's implementation before you exit the method.
-
         //The ManyToManyNavigationPropertyConfig.Map lets you
         //configure the tables and clumns used for many to many relationships.
         //It takes a ManytoManNavigationPropertyConfiguration instance in which
@@ -46,7 +48,7 @@ namespace eRestaurantSystem.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Reservations>().HasMany(r => r.Tables)
+            modelBuilder.Entity<Reservation>().HasMany(r => r.Tables)
                 .WithMany(x => x.Reservations)
                 .Map(mapping =>
                 {
