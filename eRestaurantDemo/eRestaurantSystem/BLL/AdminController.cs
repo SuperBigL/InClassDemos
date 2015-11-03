@@ -89,6 +89,10 @@ namespace eRestaurantSystem.BLL
 
          }
 
+
+        
+        
+
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<eRestaurantSystem.DAL.DTOs.CategoryMenuItems> GetReportMenuItems_List()
         {
@@ -236,7 +240,7 @@ namespace eRestaurantSystem.BLL
         {
             using (eRestaurantContext context = new eRestaurantContext())
             {
-                var results = from abillrow in Bill
+                var results = from abillrow in context.Bills
                               where abillrow.BillDate.Month == 5
                               orderby abillrow.BillDate, abillrow.Waiter.LastName, abillrow.Waiter.FirstName
                               select new WaiterBilling
